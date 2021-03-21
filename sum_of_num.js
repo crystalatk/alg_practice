@@ -37,3 +37,15 @@ const num2 = "8767984";
 
 console.log("Num1 Solutions should by 9 and is : \n", getToSingleNumber(num1));
 console.log("Num2 Solutions should by 4 and is : \n", getToSingleNumber(num2));
+
+function betterGetToSingleNumber(num) {
+  while (num.length > 1) {
+    let num1 = parseInt(num[0]);
+    let num2 = parseInt(num[1]);
+    sumNum = num1 + num2;
+    num = sumNum.toString() + num.substring(2);
+  }
+  return num;
+}
+
+console.log("THIS IS THE BETTER FUNCTION!", betterGetToSingleNumber(num2));
